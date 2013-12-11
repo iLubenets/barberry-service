@@ -1,8 +1,14 @@
 {
     "name": "barberry/service",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/iLubenets/Barberry.git"
+        }
+    ],
     "require": {
-        "barberry/barberry": "1.1.*@dev",
+        "barberry/barberry": "dev-master",
         "barberry/plugin-imagemagick": "*"
     },
     "autoload": {
