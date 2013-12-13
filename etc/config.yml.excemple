@@ -2,7 +2,7 @@ database:
   connection_string: "host=localhost port=5432 dbname=database user=user password=password"
 
 prosto_auth:
-  enabled: true
+  certified_ip: 127.0.0.1
   methods:
     teammember:
       class: ProstoAuth\AuthenticateMethod\TeamMemberAuthenticateMethod

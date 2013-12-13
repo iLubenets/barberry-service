@@ -10,7 +10,8 @@ include dirname(__DIR__) . '/vendor/autoload.php';
 try {
     $config = Yaml::parse(dirname(__DIR__) . '/etc/config.yml');
     $isAccessDenied = false;
-    if ($_SERVER['REQUEST_METHOD'] !== 'GET' && $config['prosto_auth']['enabled']) {
+    if ($_SERVER['REQUEST_METHOD'] !== 'GET'
+        && $config['prosto_auth']['certified_ip'] !== $_SERVER['REMOTE_ADDR']) {
         $prostoAuth = new ProstoAuth($config['prosto_auth'], $config['database']);
         $user = $prostoAuth->getAuthenticateUser('teammember');
         $isAccessDenied = $user === null;
