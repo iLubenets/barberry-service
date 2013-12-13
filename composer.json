@@ -5,11 +5,17 @@
         {
             "type": "vcs",
             "url": "https://github.com/iLubenets/Barberry.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/iLubenets/ProstoAuth.git"
         }
     ],
     "require": {
         "barberry/barberry": "dev-master",
-        "barberry/plugin-imagemagick": "*"
+        "barberry/plugin-imagemagick": "*",
+        "symfony/yaml": "2.*",
+        "ilubenets/prostoauth": "dev-master"
     },
     "autoload": {
         "classmap": ["barberry-directions/", "barberry-monitors/"]

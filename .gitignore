@@ -7,3 +7,5 @@ var/*
 usr/*
 public/cache/*
 vendor/
+etc/*_counter.txt
+etc/config.yml
