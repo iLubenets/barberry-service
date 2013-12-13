@@ -8,9 +8,9 @@ use Symfony\Component\Yaml\Yaml;
 include dirname(__DIR__) . '/vendor/autoload.php';
 
 try {
+    $config = Yaml::parse(dirname(__DIR__) . '/etc/config.yml');
     $isAccessDenied = false;
-    if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-        $config = Yaml::parse(dirname(__DIR__) . '/etc/config.yml');
+    if ($_SERVER['REQUEST_METHOD'] !== 'GET' && $config['prosto_auth']['enabled']) {
         $prostoAuth = new ProstoAuth($config['prosto_auth'], $config['database']);
         $user = $prostoAuth->getAuthenticateUser('teammember');
         $isAccessDenied = $user === null;
